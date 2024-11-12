@@ -13,7 +13,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -36,15 +35,27 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    // Dependencias para Retrofit y Gson
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+
+    // Logging Interceptor de OkHttp
+    implementation(libs.logging.interceptor)
+
+    // Maps
+    implementation(libs.play.services.maps)
+
+    // Dependencias para Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.google.android.gms:play-services-maps:18.0.2")
 
+    // RecyclerView
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
 }
